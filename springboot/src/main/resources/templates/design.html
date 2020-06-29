@@ -10,11 +10,20 @@
     <img th:src="@{/images/pick.jpg}"/>
 
     <form method="POST" th:object="${design}">
-        <div class="chart-plot-background" id="wraps">
-            <h3>Designate your Wrap:</h3>
-            <div th:each="ingredient : ${wrap}">
-                <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
-                <span th:text="${ingredient.name}">INGREDIENT</span>
+        <div class="calendar-grid">
+            <div class="chart-plot-background" id="wraps">
+                <h3>Designate your Wrap:</h3>
+                <div th:each="ingredient : ${wrap}">
+                    <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+                    <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
+            </div>
+            <div class="chart-plot-background" id="wraps">
+                <h3>Pick your protein:</h3>
+                <div th:each="ingredient : ${protein}">
+                    <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+                    <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+                </div>
             </div>
         </div>
     </form>
